@@ -1,4 +1,4 @@
-## NICS-XY Scan and ICSS Plotting Tools
+## NICS-XY Scan
 
 This repository contains two Python scripts to automate NICS-XY analyses and post-processing of NMR shielding tensors. The scripts are interactive by design to allow flexibility of the user.
 
