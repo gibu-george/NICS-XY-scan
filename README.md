@@ -37,7 +37,7 @@ The script will interactively ask for:
 - Gaussian input file:  
   `input_with_Bq_<height>.com`
 
-Ready for Gaussian NMR calculations.
+Ready for Gaussian NMR calculations. Before submitting the calculation edit the ncores, mem, and the level of theory for the calculation.
 
 ---
 
