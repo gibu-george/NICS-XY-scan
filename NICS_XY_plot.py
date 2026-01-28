@@ -21,14 +21,14 @@ def elementNo(element):
     return eleNumber
 
 # ========================== Read original output file ==========================
-print("Please specify the Gaussian output file path of NMR task:")
+print("Please specify the Gaussian output file path of NMR:")
 
-fileName = input("(e.g.: /ICSScub3D/example/methylazulene_3DICSS_0001.log)\n")
+fileName = input("(e.g.: /home/system/nmr.log)\n")
 if fileName.strip()[0] == '\'' and fileName.strip()[-1] == '\'':
     fileName = fileName.strip()[1:-1]
 
 print("\nPlease wait...")
-print("ICSScub3D is extracting magnetic shielding tensor from the output file...\n")
+print("The magnetic shielding tensor is extracting from the output file...\n")
 
 shieldTensorIso = []
 shieldTensorAni = []
@@ -82,7 +82,7 @@ for line1 in outputLines:
 
 print("Processing finished!\n")
 
-print("Choose shielding tensor for 3D-ICSS map:")
+print("Choose shielding tensor for the NICS-XY plot:")
 print("      1 - Isoptropic       2 - Anisotropy")
 print("      3 - XX component     4 - YX component     5 - ZX component")
 print("      6 - XY component     7 - YY component     8 - ZY component")
