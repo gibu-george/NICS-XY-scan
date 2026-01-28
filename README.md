@@ -9,7 +9,7 @@ The workflow consists of:
 
 ---
 
-## 1. NICS-XY Input Generator (nics_xy_scan.py)
+## 1. NICS-XY Input Generator (nics_xy_bq.py)
 
 ### Purpose
 
@@ -41,7 +41,7 @@ Ready for Gaussian NMR calculations. Before submitting the calculation edit the 
 
 ---
 
-## 2. NICS-XY Plot (NICS_XY_plot.py)
+## 2. NICS-XY Plot (nics_xy_plot.py)
 
 ### Purpose
 
