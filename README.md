@@ -1,40 +1,33 @@
 ## NICS-XY Scan and ICSS Plotting Tools
 
-This repository contains two Python scripts to automate NICS-XY / ICSS analyses using Gaussian and post-processing of NMR shielding tensors.
+This repository contains two Python scripts to automate NICS-XY analyses and post-processing of NMR shielding tensors.
 
 The workflow consists of:
 
 1. Generating Gaussian input files with Bq probe atoms positioned along selected bonds.
 2. Extracting magnetic shielding tensors from Gaussian NMR outputs and plotting NICS-XY curves.
 
-These tools are useful for aromaticity and magnetic response analyses.
-
 ---
 
-## 1. NICS-XY Input Generator
+## 1. NICS-XY Input Generator (nics_xy_scan.py)
 
 ### Purpose
 
 Generates Gaussian input files by inserting Bq (ghost) atoms at regular intervals along a user-defined path between bond midpoints.  
-This enables automated NICS-XY or ICSS scans.
+This enables automated NICS-XY scans.
 
 ### How it works
 
-- Reads an input structure file containing atomic coordinates.
+- Reads an input structure file containing just the cartesian coordinates.
 - User selects bonds by atomic indices.
 - Computes midpoints of selected bonds.
 - Places Bq atoms along the path connecting these midpoints.
 - Writes a Gaussian `.com` input file including the Bq atoms and connectivity section.
 
-### Required input
-
-- A Gaussian-style coordinate file containing atomic symbols and Cartesian coordinates.
-
 ### Running the script
 
 The script will interactively ask for:
 
-- Input filename (tab completion enabled)
 - Height of Bq atoms above the molecular plane
 - Bond pairs defining the scan path
 - Distance interval between Bq points
@@ -45,5 +38,65 @@ The script will interactively ask for:
   `input_with_Bq_<height>.com`
 
 Ready for Gaussian NMR calculations.
+
+---
+
+## 2. NICS / ICSS Tensor Extractor and Plotter
+
+### Purpose
+
+Extracts NMR shielding tensors of Bq probe atoms from Gaussian output files and plots NICS-XY curves.
+
+### How it works
+
+- Reads Gaussian NMR output (`.log` or `.out`).
+- Extracts isotropic and tensor components of shielding for Bq atoms.
+- Allows user to select tensor component (iso, xx, yy, zz, etc.).
+- Plots NICS values along the scan coordinate.
+- Saves publication-ready PNG figures.
+
+### Required input
+
+- Gaussian output file from NMR calculation containing Bq atoms.
+
+### Running the script
+
+The script interactively asks for:
+
+- Gaussian output filename
+- Tensor component to plot
+
+### Output
+
+- PNG figure:  
+  `<outputname>_XY_<tensor>.png`
+
+---
+
+## Dependencies
+
+- Python 3.x
+- NumPy
+- Matplotlib
+
+Optional (for interactive tab completion on Linux/Mac):
+
+- readline
+
+---
+
+## Notes
+
+- Bq denotes ghost atoms used for magnetic shielding probes.
+- Gaussian keyword used in the generated input:
+  `#p LC-wPBE/def2TZVPP NMR=GIAO geom=connectivity`
+- The scripts are interactive by design to allow flexible scan definitions.
+- Tested on Linux environments.
+
+---
+
+## Author
+
+Gibu George
 
 ---
