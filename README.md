@@ -67,3 +67,9 @@ The script interactively asks for:
   `<outputname>_XY_<tensor>.png`
 
 ---
+## How to cite this script
+
+If you think this script contributed to your work, please consider citing this in your list of references.
+You can navigate to Zenodo repository using the DOI below and export the citation in different styles and formats.
+
+[![DOI](https://zenodo.org/badge/1143485919.svg)](https://doi.org/10.5281/zenodo.18402009)
