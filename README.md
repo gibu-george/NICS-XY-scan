@@ -1,6 +1,6 @@
 ## NICS-XY Scan and ICSS Plotting Tools
 
-This repository contains two Python scripts to automate NICS-XY analyses and post-processing of NMR shielding tensors.
+This repository contains two Python scripts to automate NICS-XY analyses and post-processing of NMR shielding tensors. The scripts are interactive by design to allow flexibility of the user.
 
 The workflow consists of:
 
@@ -41,7 +41,7 @@ Ready for Gaussian NMR calculations.
 
 ---
 
-## 2. NICS / ICSS Tensor Extractor and Plotter
+## 2. NICS-XY Plot (NICS_XY_plot.py)
 
 ### Purpose
 
@@ -50,14 +50,9 @@ Extracts NMR shielding tensors of Bq probe atoms from Gaussian output files and 
 ### How it works
 
 - Reads Gaussian NMR output (`.log` or `.out`).
-- Extracts isotropic and tensor components of shielding for Bq atoms.
-- Allows user to select tensor component (iso, xx, yy, zz, etc.).
+- Allows user to select tensor component (iso, xx, yy, zz, etc.) and the extracts the tensor components of shielding for Bq atoms.
 - Plots NICS values along the scan coordinate.
-- Saves publication-ready PNG figures.
-
-### Required input
-
-- Gaussian output file from NMR calculation containing Bq atoms.
+- Saves the plots to PNG file.
 
 ### Running the script
 
@@ -70,33 +65,5 @@ The script interactively asks for:
 
 - PNG figure:  
   `<outputname>_XY_<tensor>.png`
-
----
-
-## Dependencies
-
-- Python 3.x
-- NumPy
-- Matplotlib
-
-Optional (for interactive tab completion on Linux/Mac):
-
-- readline
-
----
-
-## Notes
-
-- Bq denotes ghost atoms used for magnetic shielding probes.
-- Gaussian keyword used in the generated input:
-  `#p LC-wPBE/def2TZVPP NMR=GIAO geom=connectivity`
-- The scripts are interactive by design to allow flexible scan definitions.
-- Tested on Linux environments.
-
----
-
-## Author
-
-Gibu George
 
 ---
