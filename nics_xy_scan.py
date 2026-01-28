@@ -3,7 +3,7 @@ import os
 import readline
 import numpy as np
 
-print("\ncode for NICS-XY scan - by Gibu George\n")
+print("\ncode for NICS-XY scan by Gibu George\n")
 print("\nPRESS Ctrl+c to exit the program.\n")
 
 # Enable tab-completion for file selection
