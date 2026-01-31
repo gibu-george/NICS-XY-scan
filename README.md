@@ -50,7 +50,7 @@ Extracts NMR shielding tensors of Bq probe atoms from Gaussian output files and 
 ### How it works
 
 - Reads Gaussian NMR output (`.log` or `.out`).
-- Allows user to select tensor component (iso, xx, yy, zz, etc.) and the extracts the tensor components of shielding for Bq atoms.
+- Allows user to select tensor component (iso, xx, yy, zz, etc.) and extracts the tensor components of shielding for Bq atoms.
 - Plots NICS values along the scan coordinate.
 - Saves the plots to PNG file.
 
